@@ -75,10 +75,11 @@ class Circle:
         loop_count = 0
         while not self.ctrl_c:
             count+=1
-             
+            yaw_diff = abs(self.theta_z0 - self.theta_z)
+            print("yaw diff " + str(yaw_diff))
             print(count)
             print(self.x)
-            if (self.x < 0.02 and self.x >-0.02) and (self.y < 0.02 and self.y >-0.02) and count >50:
+            if yaw_diff <0.1 and yaw_diff > -0.1 and count >50:
                 count = 0
                 loop_count +=1
                 print("yoyo")
